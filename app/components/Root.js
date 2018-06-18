@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import Home from '../../components/Home/Home.jsx';
-import Ingredients from '../../components/Ingredients/Ingredients.jsx';
-// import { Home, Ingredients } from '../../components';
-import { fetchIngredients } from '../../store/reducers';
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import Home from './Home'
+import { fetchIngredients } from '../store/reducers'
 
 class Root extends Component {
 
   componentDidMount() {
-    this.props.fetchIngredients();
+    this.props.fetchIngredients()
   }
 
   render() {
 
-    const { ingredients } = this.props;
+    const { ingredients } = this.props
 
     return (
       <div>

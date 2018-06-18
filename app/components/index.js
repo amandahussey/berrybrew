@@ -1,5 +1,5 @@
-import Home from '../components/Home/Home.jsx'
-import Ingredients from '../components/Ingredients/Ingredients.jsx'
+import Home from './Home'
+import Ingredients from './Ingredients'
 
 export default {
   Home,
