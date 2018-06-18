@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Home from './Home'
+import SelectIngredients from './select_ingredients/SelectIngredients'
 import { fetchIngredients } from '../store/reducers'
 
 class Root extends Component {
@@ -17,7 +18,8 @@ class Root extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={() => <Home ingredients={ingredients} /> } />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/select-ingredients" component={SelectIngredients} />
         </Switch>
       </div>
     )
@@ -37,4 +39,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Root))

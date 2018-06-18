@@ -32,7 +32,7 @@ export const fetchIngredients = () => {
 export default (state = [], action) => {
   switch (action.type) {
     case GET_INGREDIENTS:
-      return action.ingredients;
+      return action.ingredients
     default:
       return state;
   }

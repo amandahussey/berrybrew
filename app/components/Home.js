@@ -1,25 +1,33 @@
 import React from 'react'
-import Ingredients from './Ingredients'
+import { withRouter } from 'react-router-dom';
 
-export default function Home (props) {
+function Home (props) {
 
-  const { ingredients } = props
+  const { history } = props
 
   return (
-    <div>
-      <div style={container}>
+    <div style={container}>
+      <div style={header} onClick={() => history.push('/select-ingredients')}>
         <h1 style={berry}>berry</h1><h1 style={brew}>brew</h1>
       </div>
     </div>
   )
 }
 
+export default withRouter(Home)
+
+// ========== STYLES ==========
+
 const styles = {
   container: {
     display: 'flex',
     height: '100vh',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+  header: {
+    display: 'flex'
   },
   berry: {
     color: '#CCCCFF'
@@ -29,5 +37,5 @@ const styles = {
   }
 }
 
-const { container, berry, brew } = styles
+const { container, header, berry, brew } = styles
 

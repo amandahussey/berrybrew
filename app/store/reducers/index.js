@@ -1,15 +1,18 @@
 
 // IMPORT INDIVIDUAL REDUCERS
 
-import { combineReducers } from 'redux';
-import ingredients from './ingredients';
-import recipes from './recipes';
+import { combineReducers } from 'redux'
+import allIngredients from './allIngredients'
+import selectedIngredients from './selectedIngredients'
+import recipes from './recipes'
+
 
 
 // COMBINE REDUCERS
 
 const rootReducer = combineReducers({
-  ingredients,
+  allIngredients,
+  selectedIngredients,
   recipes,
 })
 
@@ -18,5 +21,6 @@ export default rootReducer;
 
 // EXPORT --ACTION TYPES--ACTION CREATORS--THUNK CREATORS--REDUCERS-- FOR EACH
 
-export * from './ingredients';
-export * from './recipes';
+export * from './allIngredients'
+export * from './selectedIngredients'
+export * from './recipes'
